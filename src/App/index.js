@@ -1,16 +1,19 @@
 import React from 'react';
+
 import './App.css';
 
 import Main from '../components/Main';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      {/* TODO: <Heder> */}
+      <Header />
       <Main />
-      {/* TODO: <Footer/> */}
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
