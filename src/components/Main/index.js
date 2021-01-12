@@ -1,13 +1,30 @@
 import React from 'react';
+import { Switch, Route, Link } from 'react-router-dom';
 import './Main.css';
-
-import CardContainer from '../common/CardContainer';
+import Home from './Home';
+import Search from './Search';
+import { AnimeInfo } from './AnimeInfo';
 
 const Main = () => {
   return (
-    // TODO: router is here
     <>
-      <CardContainer />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/search" render={(props) => <Search {...props} />} />
+        <Route
+          exact
+          path="/animeInfo/:name"
+          render={(props) => <AnimeInfo {...props} />}
+        />
+        <Route path="*" component={AnimeInfo}>
+          <div>
+            <h1>404 NOT Found</h1>
+            <Link to="/">Go Home</Link>
+          </div>
+        </Route>
+      </Switch>
     </>
   );
 };
