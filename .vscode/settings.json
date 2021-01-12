@@ -1,0 +1,14 @@
+{
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "editor.formatOnSave": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}
