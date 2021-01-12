@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": ["plugin:react/recommended", "airbnb","plugin:prettier/recommended"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -21,7 +22,10 @@
         "singleQuote": true,
         "trailingComma": "all"
       }
-    ]
-
+    ],
+    "react/state-in-constructor": [0, "always"],
+    "no-nested-ternary": "off",
+    "react/prefer-stateless-function":[0],
+    "react/jsx-props-no-spreading":[0]
   }
 }
