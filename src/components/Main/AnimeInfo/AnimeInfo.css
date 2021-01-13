@@ -1,1 +1,17 @@
 /* AnimeInfo css */
+.animeInfo{
+  display: grid;
+  grid-template-columns: 0.45fr 224px 0.092fr 829px 0.45fr;
+  grid-template-areas: ". p . m .";
+}
+
+.poster-wrapper{
+  grid-area: p;
+}
+.content{
+  grid-area: m;
+}
+
+.mainTitle {
+  font-size: 3rem;
+}
