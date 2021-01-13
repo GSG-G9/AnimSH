@@ -52,7 +52,6 @@ class Search extends Component {
 
   render() {
     const { searchResult, isLoaded, q, error } = this.state;
-
     return (
       <div className="searchResult main">
         {isLoaded && q && !error ? (

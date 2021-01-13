@@ -1,1 +1,25 @@
+.App {
+  display: grid;
+  grid-template-areas:
+      "Header"
+      "Main"
+      "Footer";
+  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 94px auto  40px;
+  overflow-x: hidden;
+}
 
+
+@media screen and (max-width: 1052px) {
+  .App {
+    grid-template-rows:105px auto  40px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .App {
+    grid-template-rows:165px auto  40px;
+  }
+}
