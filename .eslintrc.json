@@ -27,5 +27,13 @@
     "no-nested-ternary": "off",
     "react/prefer-stateless-function":[0],
     "react/jsx-props-no-spreading":[0]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js"]
+      }
+    }
   }
 }
