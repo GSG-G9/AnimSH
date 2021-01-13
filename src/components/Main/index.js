@@ -19,8 +19,8 @@ const Main = () => {
         />
         <Route
           exact
-          path="/animeInfo/:name"
-          render={(props) => <AnimeInfo {...props} />}
+          path="/animeInfo/:id"
+          render={({ match }) => <AnimeInfo match={match} />}
         />
         <Route path="*" component={AnimeInfo}>
           <div>
