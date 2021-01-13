@@ -13,22 +13,29 @@ nav ul{
 	justify-content: center;
 }
 
-nav ul li.logo{
+nav ul a {
 	display: flex;
 	flex: 1;
+	text-decoration: none;
 }
 
-nav ul li.logo img{
+nav ul a .logo {
+	display: flex;
+	flex-direction: row;
+}
+
+nav ul a li.logo img{
 	height: 50px;
 }
 
-nav ul li.logo h1{
+nav ul a li.logo h1{
 	padding: 10px 0 6px 12px;
 	font-family: Oregano;
 	font-style: normal;
 	font-size: 23px;
 	font-weight: 700;
 	color: #000000;
+	cursor: pointer;
 }
 
 nav ul .search-icon{
