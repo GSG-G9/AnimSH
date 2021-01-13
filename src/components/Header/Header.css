@@ -1,4 +1,5 @@
 nav{
+	grid-area: Header;
 	background:#FFFFFF;
 	padding: 2px 40px 2px 40px;
 	border-left: none;
@@ -13,7 +14,7 @@ nav ul{
 	justify-content: center;
 }
 
-nav ul a {
+nav ul>a {
 	display: flex;
 	flex: 1;
 	text-decoration: none;
@@ -29,13 +30,13 @@ nav ul a li.logo img{
 }
 
 nav ul a li.logo h1{
-	padding: 10px 0 6px 12px;
-	font-family: Oregano;
-	font-style: normal;
-	font-size: 23px;
-	font-weight: 700;
-	color: #000000;
-	cursor: pointer;
+  padding: 10px 0 6px 12px;
+  font-family: Oregano;
+  font-style: normal;
+  font-size: 23px;
+  font-weight: 700;
+  color: #000000;
+  cursor: pointer;
 }
 
 nav ul .search-icon{
