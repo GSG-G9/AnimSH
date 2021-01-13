@@ -9,6 +9,8 @@
     "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "qs": "^6.9.4",
+    "qs-iconv": "^1.0.4",
+    "querystring": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "5.2.0",
