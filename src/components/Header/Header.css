@@ -1,0 +1,107 @@
+nav{
+	background:#FFFFFF;
+	padding: 2px 40px 2px 40px;
+	border-left: none;
+	border-right: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 37px;
+}
+
+nav ul{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav ul li.logo{
+	display: flex;
+	flex: 1;
+}
+
+nav ul li.logo img{
+	height: 50px;
+}
+
+nav ul li.logo h1{
+	padding: 10px 0 6px 12px;
+	font-family: Oregano;
+	font-style: normal;
+	font-size: 23px;
+	font-weight: 700;
+	color: #000000;
+}
+
+nav ul .search-icon{
+	height: 40px;
+	width: 30%;
+	display: flex;
+	background: #254075;
+  border-radius: 10px 15px 15px 10px;
+}
+
+nav ul .search-icon input{
+	height: 100%;
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 0px 10px 0 20px;
+	color: #000;
+	background:  #ECF0F9;
+	font-size: 16px;
+	border-radius: 5px 0 0 5px;
+	font-size: 16px;
+	font-family: Nunito Sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 19px;
+  line-height: 26px;
+}
+
+nav ul .search-icon .icon{
+	height: 100%;
+	width: 58px;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #cccccc;
+	cursor: pointer;
+  border-radius: 0px 13px 13px 0px;
+}
+
+nav ul .search-icon .icon:hover{
+	background: #55528E;
+}
+
+nav ul .search-icon .icon span{
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+@media screen and (max-width: 1052px) {
+	nav{
+		padding: 10px 40px;
+  }
+  nav ul .search-icon{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 800px){
+
+	nav{
+		z-index: 1;
+		padding: 9px 0;
+  }
+  
+	nav ul{
+		flex-direction:column;
+		padding:  0;
+  }
+  
+	nav ul li.logo {
+		margin-bottom: 10px;
+	}
+
+	nav ul .search-icon{
+		width: 75%;
+	}
+}
