@@ -1,1 +1,7 @@
 /* search css */
+
+
+.searchResult .loader{
+    padding-top: 50px;
+}
+

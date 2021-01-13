@@ -12,7 +12,11 @@ const Main = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/search" render={(props) => <Search {...props} />} />
+        <Route
+          exact
+          path="/search"
+          render={({ location }) => <Search location={location} />}
+        />
         <Route
           exact
           path="/animeInfo/:name"

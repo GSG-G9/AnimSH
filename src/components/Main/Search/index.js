@@ -1,47 +1,73 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import queryString from 'qs';
+import queryString from 'querystring';
 import fetch from 'node-fetch';
 
 import './Search.css';
 
 import CardContainer from '../../common/CardContainer';
+import Loader from '../../common/Loader';
 
 class Search extends Component {
-  status = {
+  state = {
     isLoaded: false,
     searchResult: {},
     q: '',
+    error: null,
   };
 
   componentDidMount() {
-    const { q } = this.state;
-    fetch(`https://api.jikan.moe/v3/search/anime?q=${q}&page=1`)
-      .then((res) => res.json())
-      .then((searchResult) => {
-        this.setState({
-          searchResult,
-          isLoaded: true,
-        });
-      })
-      .catch(console.log);
+    this.fetchAnimeData();
   }
 
-  render() {
+  componentDidUpdate({ location: { search } }) {
+    this.fetchAnimeData(search);
+  }
+
+  fetchAnimeData = (oldSearch) => {
     const { location } = this.props;
-    const { search } = location;
-    const { q } = queryString.parse(search.slice(1));
-    this.setState({ q });
-    const { searchResult, isLoaded } = this.state;
-    return <CardContainer searchResult={searchResult} isLoaded={isLoaded} />;
+
+    const newSearch = location.search;
+    if ((oldSearch && oldSearch !== newSearch) || !oldSearch) {
+      const { q } = queryString.parse(newSearch.slice(1));
+      this.setState({
+        q,
+      });
+      fetch(`https://api.jikan.moe/v3/search/anime?q=${q}&page=1`)
+        .then((res) => res.json())
+        .then(({ results }) => {
+          this.setState({
+            q,
+            searchResult: results,
+            isLoaded: true,
+          });
+        })
+        .catch((error) => {
+          this.setState({
+            error,
+          });
+        });
+    }
+  };
+
+  render() {
+    const { searchResult, isLoaded, q, error } = this.state;
+
+    return (
+      <div className="searchResult main">
+        {isLoaded && q && !error ? (
+          <CardContainer title={q} searchResult={searchResult} />
+        ) : (
+          <Loader />
+        )}
+      </div>
+    );
   }
 }
 
 Search.propTypes = {
   location: propTypes.shape({
-    search: propTypes.shape({
-      slice: propTypes.string,
-    }),
+    search: propTypes.string,
   }).isRequired,
 };
 
