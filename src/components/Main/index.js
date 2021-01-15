@@ -12,17 +12,9 @@ const Main = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route
-          exact
-          path="/search"
-          render={({ location }) => <Search location={location} />}
-        />
-        <Route
-          exact
-          path="/animeInfo/:id"
-          render={({ match }) => <AnimeInfo match={match} />}
-        />
-        <Route path="*" component={AnimeInfo}>
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/animeInfo/:id" component={AnimeInfo} />
+        <Route path="*">
           <div>
             <h1>404 NOT Found</h1>
             <Link to="/">Go Home</Link>
